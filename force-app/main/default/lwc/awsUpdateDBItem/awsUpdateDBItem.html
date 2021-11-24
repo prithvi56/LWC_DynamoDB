@@ -1,0 +1,47 @@
+<template>
+    <lightning-card>
+            <h2 class="slds-text-heading_medium slds-p-around_small">
+                Search DDB Number To IVR
+            </h2>
+            <div class="slds-p-around_small lgc-bg">
+                <lightning-input type="search" onchange={handleInputChange} class="slds-m-bottom_small" label="Search"></lightning-input>
+            </div>
+            <div class="slds-p-around_small lgc-bg">
+                <lightning-button variant="brand" label="Search" onclick={handleKeyClick}> </lightning-button>
+            </div>
+        <template if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </template>
+        <template if:true={responseTrue}>   
+                <lightning-layout>
+                    <div class="slds-p-around_small lgc-bg">
+                        <lightning-input type="text" label="PhoneNumber" value={PhoneNumber} disabled></lightning-input>
+                    </div>
+                    <div class="slds-p-around_small lgc-bg">
+                        <lightning-input type="text" label="Country" value={Country} name="Country" onchange={handleInputFieldChange} ></lightning-input>
+                    </div>
+                    <div class="slds-p-around_small lgc-bg">
+                        <lightning-input type="text" label="IVRLanguageName" value={IVRLanguageName} name="IVRLanguageName" onchange={handleInputFieldChange} ></lightning-input>
+                    </div>
+                    <div class="slds-p-around_small lgc-bg">
+                        <lightning-input type="text" label="ProductCategory" value={ProductCategory} name="ProductCategory" onchange={handleInputFieldChange} ></lightning-input>
+                    </div>
+                    <div class="slds-p-around_small lgc-bg">
+                        <lightning-input type="text" label="PromptBrandName" value={PromptBrandName} name="PromptBrandName" onchange={handleInputFieldChange} ></lightning-input>
+                    </div>
+                    <div class="slds-p-around_small lgc-bg">
+                        <lightning-input type="text" label="ReportingBrand" value={ReportingBrand} name="ReportingBrand" onchange={handleInputFieldChange} ></lightning-input>
+                    </div>
+                    <div class="slds-p-around_small lgc-bg">
+                        <lightning-input type="text" label="UnileverNGN" value={UnileverNGN} name="UnileverNGN" onchange={handleInputFieldChange} ></lightning-input>
+                    </div>
+                    <div class="slds-p-around_large">
+                        <div class="slds-p-around_small lgc-bg">
+                            <lightning-button variant="brand" label="Save" title="Save" icon-name="utility:save" onclick={handleSaveChanges} ></lightning-button>
+                        </div>
+                    </div>
+
+                </lightning-layout>
+        </template>
+    </lightning-card>   
+</template>

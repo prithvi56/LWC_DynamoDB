@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="AWS DynamoDB Tables">
+        <lightning-layout>
+            <template if:true={showSpinner}>
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </template>
+            <div class="slds-text-heading_small">
+                <template for:each={tableNames} for:item="td">
+                    <p key={td}><lightning-icon class="slds-m-around_small" icon-name="utility:database"></lightning-icon>{td}<lightning-helptext content="More information here!"></lightning-helptext></p>
+                </template>
+            </div> 
+        </lightning-layout>
+    </lightning-card>   
+</template>

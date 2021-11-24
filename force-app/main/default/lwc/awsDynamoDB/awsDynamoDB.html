@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="DDBNumberToIVR">
+        <lightning-layout>
+            <div class="slds-m-around_small slds-p-top_x-small">
+                <lightning-button variant="brand" label="Search" onclick={handleKeyClick}> </lightning-button>
+            </div>
+        </lightning-layout>
+        <template if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </template>
+    </lightning-card>
+    <template if:true={responseTrue}>
+    <lightning-card>    
+        <lightning-layout>
+                <div class="slds-m-left_small">
+                        <div class="slds-p-around_xxx-small">
+                            <lightning-input type="text" label="IVRLanguageName" value={IVRLanguageName}></lightning-input>
+                        </div>
+                        <div class="slds-p-around_xxx-small lgc-bg">
+                            <lightning-input type="text" label="PhoneNumber" value={PhoneNumber}></lightning-input>
+                        </div>
+                        <div class="slds-p-around_xxx-small lgc-bg">
+                            <lightning-input type="text" label="Country" value={Country}></lightning-input>
+                        </div>
+                        <div class="slds-p-around_xxx-small lgc-bg">
+                            <lightning-input type="text" label="ReportingBrand" value={ReportingBrand}></lightning-input>
+                        </div>
+                        <div class="slds-p-around_xxx-small lgc-bg">
+                            <lightning-input type="text" label="ProductCategory" value={ProductCategory}></lightning-input>
+                        </div>
+                        <div class="slds-p-around_xxx-small lgc-bg">
+                            <lightning-input type="text" label="UnileverNGN" value={UnileverNGN}></lightning-input>
+                        </div>    
+                </div>
+        </lightning-layout>
+    </lightning-card> 
+    </template>   
+</template>

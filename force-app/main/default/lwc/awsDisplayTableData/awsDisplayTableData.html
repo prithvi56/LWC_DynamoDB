@@ -1,0 +1,46 @@
+<template>
+    <lightning-card> 
+        <h2 class="slds-text-heading_large slds-p-around_medium">
+            DDB Number to IVR Details
+        </h2>
+        <lightning-layout>
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col">
+                        <lightning-card>
+                            <p class="slds-p-horizontal_medium">
+                                <template if:true={responseTrue}>
+                                    <table class="slds-text-heading_x-small">
+                                        <tr> 
+                                            <th class="slds-text-align_center slds-p-around_medium">PhoneNumber</th>
+                                            <th class="slds-text-align_center slds-p-around_medium">IVRLanguageName</th>
+                                            <th class="slds-text-align_center slds-p-around_medium">Country</th>
+                                            <th class="slds-text-align_center slds-p-around_medium">ReportingBrand</th>
+                                            <th class="slds-text-align_center slds-p-around_medium">ProductCategory</th>
+                                            <th class="slds-text-align_center slds-p-around_medium">UnileverNGN</th>
+                                        </tr>
+                                        <template for:each={responseJSON.Items} for:item="item">
+                                            <tr key={item.PhoneNumber.S}>
+                                                <td class="slds-text-align_center"><lightning-formatted-text value={item.PhoneNumber.S} ></lightning-formatted-text></td>
+                                                <td class="slds-text-align_center"><lightning-formatted-text value={item.IVRLanguageName.S} ></lightning-formatted-text></td>
+                                                <td class="slds-text-align_center"><lightning-formatted-text value={item.Country.S} ></lightning-formatted-text></td>
+                                                <td class="slds-text-align_center"><lightning-formatted-text value={item.ReportingBrand.S} ></lightning-formatted-text></td>
+                                                <td class="slds-text-align_center"><lightning-formatted-text value={item.ProductCategory.S} ></lightning-formatted-text></td>
+                                                <td class="slds-text-align_center"><lightning-formatted-text value={item.UnileverNGN.S} ></lightning-formatted-text></td>  
+                                                <td class="slds-text-align_center"><div class="slds-p-around_x-small lgc-bg">
+                                                    <lightning-icon icon-name="action:approval"  size="x-small" alternative-text="Save" title="Save"></lightning-icon>
+                                                </div></td>
+                                                <td class="slds-text-align_center"><div class="slds-p-around_x-small lgc-bg">
+                                                    <lightning-icon icon-name="action:remove" size="x-small" alternative-text="cancel" title="cancel"></lightning-icon>
+                                                </div></td>
+                                            </tr>
+                                        </template>
+                                    </table>    
+                                </template>
+                                </p>
+                        </lightning-card>   
+                    </div>
+                </div>      
+        </lightning-layout>
+             
+    </lightning-card> 
+</template>
